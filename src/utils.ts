@@ -4,8 +4,13 @@ import { z } from "zod";
 export const parseZ =
   <T>(zodType: z.ZodType<T>) =>
   (v: unknown): E.Either<z.ZodError<T>, T> => {
-    return E.tryCatch(
-      () => zodType.parse(v),
-      (err) => err as z.ZodError<T>
-    );
+    const result = zodType.safeParse(v);
+
+    switch (result.success) {
+      case true:
+        return E.right(result.data);
+
+      case false:
+        return E.left(result.error);
+    }
   };
