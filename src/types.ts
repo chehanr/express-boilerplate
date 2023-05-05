@@ -45,9 +45,7 @@ export const ExampleRequestQueriesZ = z.object({ foo: z.string().optional() });
 
 export type ExampleRequestQueries = z.infer<typeof ExampleRequestQueriesZ>;
 
-export const ExampleRequestBodyZ = z
-  .object({ bar: z.string().optional() })
-  .optional();
+export const ExampleRequestBodyZ = z.object({ bar: z.string().optional() });
 
 export type ExampleRequestBody = z.infer<typeof ExampleRequestBodyZ>;
 
