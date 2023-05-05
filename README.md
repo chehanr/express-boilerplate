@@ -10,15 +10,21 @@ Includes:
 
 ## Running
 
-```ts
+```bash
 npm i
 npm run build
 npm run start
 ```
 
+Use the following to test the example endpoint.
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"bar": "bar"}' "http://localhost:3000/baz?foo=foo"
+```
+
 ## Development
 
-```ts
+```bash
 npm run dev
 ```
 
