@@ -1,4 +1,5 @@
 import { Router } from "express";
+import bodyParser from "body-parser";
 
 import { exampleController } from "./controllers";
 import {
@@ -23,8 +24,9 @@ export const validateExampleRequestParamsFn = validateRequestParams(
   ExampleRequestParamsZ
 );
 
-router.get(
+router.post(
   "/:baz?",
+  bodyParser.json(),
   validateExampleRequestQueriesFn,
   validateExampleRequestBodyFn,
   validateExampleRequestParamsFn,
