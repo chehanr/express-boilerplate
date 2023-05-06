@@ -54,9 +54,9 @@ export const ExampleRequestParamsZ = z.object({ baz: z.string().optional() });
 export type ExampleRequestParams = z.infer<typeof ExampleRequestParamsZ>;
 
 export type ExampleAPIResponseBody = APIResponseBodySuccessful<{
-  queries: Record<string, unknown>;
-  body: Record<string, unknown>;
-  params: Record<string, unknown>;
-  requestContext: Record<string, unknown>;
-  responseContext: Record<string, unknown>;
+  queries: ExampleRequestQueries;
+  body: ExampleRequestBody;
+  params: ExampleRequestParams;
+  requestContext: RequestContext;
+  responseContext: ResponseContext;
 }>;

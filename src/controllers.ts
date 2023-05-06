@@ -17,7 +17,7 @@ export const exampleController: RequestHandler<
     success: true,
     result: {
       queries: req.query,
-      body: req.body || {},
+      body: req.body,
       params: req.params,
       requestContext: req.context,
       responseContext: res.context,
